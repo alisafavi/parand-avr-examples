@@ -1,2 +1,2 @@
-# parand-avr-examples
-Parand avr examples
+# <div dir="rtl">مثال‌های درس ریزپردازنده</div>
+---
