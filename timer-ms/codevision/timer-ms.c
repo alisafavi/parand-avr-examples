@@ -2,11 +2,11 @@
 This program was created by the
 CodeWizardAVR V3.12 Advanced
 Automatic Program Generator
-© Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
+ï¿½ Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
 http://www.hpinfotech.com
 
-Project : 
-Version : 
+Project : Timer in milliseconds
+Version : Amirhossein Yaghoobi
 Date    : 24/05/2018
 Author  : 
 Company : 
