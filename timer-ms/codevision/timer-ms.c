@@ -30,15 +30,16 @@ char st[20];
 
 interrupt [TIM0_OVF] void timer0_ovf_isr(void)
 {
-
       ms++;
+
+      //  har 1000 millisecond === 1 second
       if(ms == 1000) {
         sec++;
-        ms = 0;
+        ms = 0; // millisecond ro reset mikonim
         if(sec == 60)
         {
             min++; 
-            sec=0;
+            sec=0; // second ro reset mikonim
             if(min == 60)
             {
                 hour++;
@@ -46,9 +47,17 @@ interrupt [TIM0_OVF] void timer0_ovf_isr(void)
                 if(hour == 24) { hour = 0; }
             }
         }
-     
       }
-
+      /*
+       * -----------------------------------
+       * |           Tavajoh               |
+       * ----------------------------------
+       * Be dalil in ke zaman anjam mohasebat fogh
+       * be hamrah amaliat e namayesh zaman roye lcd
+       * bishtar az yek millisecond mishavad
+       * namayesh bar roye lcd ra nabayad dar in ghesmat anjam dahim
+       * va an ra dar ghesmat while(true){} dar function main anjam midahim
+       */
 }
 
 void main(void)
@@ -76,7 +85,8 @@ lcd_init(16);
 
 while (1)
       {
-                sprintf(st, "%02d:%02d:%02d:%03d",hour,min, sec, ms);
+                // Namayesh meghdar timer bar roye lcd
+                sprintf(st, "%02d:%02d:%02d:%03d", hour, min, sec, ms);
                 lcd_gotoxy(2,0);
                 lcd_puts(st); 
       }
