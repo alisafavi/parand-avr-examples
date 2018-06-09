@@ -2,7 +2,7 @@
 This program was created by the
 CodeWizardAVR V3.12 Advanced
 Automatic Program Generator
-© Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
+ï¿½ Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
 http://www.hpinfotech.com
 
 Project :  Timer
@@ -29,8 +29,6 @@ int tenth = 0 , sec = 0, min = 0 , hour = 0;
 char st[20];
 interrupt [TIM0_COMP] void timer0_comp_isr(void)
 {
-
-     
       tenth++;
       if(tenth == 10) {
         sec++;
@@ -46,9 +44,13 @@ interrupt [TIM0_COMP] void timer0_comp_isr(void)
                 if(hour == 24) { hour = 0; }
             }
         }
-        
-
       }
+    /*
+     * Az onjaee ke mohasebat bala va
+     * amaliat e namayesh meghdar bar roye lcd
+     * kamtar az 100 millisecond mibashad
+     * namayesh bar roye lcd dar in ghesmat moredi nadarad
+     */
     sprintf(st, "%02d:%02d:%02d:%d",hour,min, sec, tenth);
     lcd_gotoxy(3,0);
     lcd_puts(st);
@@ -56,7 +58,6 @@ interrupt [TIM0_COMP] void timer0_comp_isr(void)
 
 void main(void)
 {
-
 // Timer/Counter 0 initialization
 // Clock source: System Clock
 // Clock value: 0/977 kHz
@@ -77,9 +78,5 @@ lcd_init(16);
 // Global enable interrupts
 #asm("sei")
 
-while (1)
-      {
-      // Place your code here
-
-      }
+while (1) {}
 }
