@@ -2,13 +2,13 @@
 This program was created by the
 CodeWizardAVR V3.12 Advanced
 Automatic Program Generator
-© Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
+ï¿½ Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
 http://www.hpinfotech.com
 
-Project : 
-Version : 
+Project : Keypad Example
+Version : 1.0
 Date    : 18/05/2018
-Author  : 
+Author  : Amirhossein Yaghoobi
 Company : 
 Comments: 
 
@@ -60,7 +60,6 @@ void main(void)
                     break;
                 default:
                     lcd_putchar(ch);
-             
              }
           }
 }
@@ -91,5 +90,4 @@ char keypad(){
             delay_ms(50);
         }
     }
-
 }
