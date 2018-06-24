@@ -2,7 +2,7 @@
 This program was created by the
 CodeWizardAVR V3.12 Advanced
 Automatic Program Generator
-© Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
+Â© Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
 http://www.hpinfotech.com
 
 Project :   Keypad interrupt
@@ -58,8 +58,8 @@ void main(void)
     /* --------------------------------------------------------------- *
      *                                             keypad Settings                                                    *
      * --------------------------------------------------------------- */
-    DDRD    = 0x0F;    // 4bit aval vorodi, 4bit dovom khoroji
-    PORTD = 0xF0;    // pull-up 4bit aval
+    DDRD    = 0x0F;    // 4bit dovom vorodi, 4bit aval khoroji
+    PORTD = 0xF0;    // pull-up 4bit dovom
      /* ------------------------------------------------------------ */ 
        
     lcd_init(16);  
